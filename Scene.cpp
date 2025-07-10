@@ -6,6 +6,8 @@ void Scene::Initialize() {
 
 	inputHandler_->AssignMoveLeftCommand2PressKeyA();
 	inputHandler_->AssignMoveLeftCommand2PressKeyD();
+	inputHandler_->AssignMoveUpCommand2PressKeyW();
+	inputHandler_->AssignMoveDownCommand2PressKeyS();
 
 	player_ = new Player();
 	player_->Initialize();

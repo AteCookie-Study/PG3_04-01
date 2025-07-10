@@ -11,6 +11,14 @@ ICommand* InputHandler::HandleInput() {
 		return pressKeyD_;
 	}
 
+	if (Novice::CheckHitKey(DIK_W)) {
+		return pressKeyW_;
+	}
+
+	if (Novice::CheckHitKey(DIK_S)) {
+		return pressKeyS_;
+	}
+
 	return nullptr;
 }
 
@@ -24,4 +32,16 @@ void InputHandler::AssignMoveLeftCommand2PressKeyD() {
 
 	ICommand* command = new MoveRightCommand();
 	this->pressKeyD_ = command;
+}
+
+void InputHandler::AssignMoveUpCommand2PressKeyW() {
+
+    ICommand* command = new MoveUpCommand();
+    this->pressKeyW_ = command;
+}
+
+void InputHandler::AssignMoveDownCommand2PressKeyS() {
+
+    ICommand* command = new MoveDownCommand();
+    this->pressKeyS_ = command;
 }

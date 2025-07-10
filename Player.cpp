@@ -8,7 +8,7 @@ void Player::Initialize() {
 void Player::Update() {}
 
 void Player::Draw() {
-	Novice::DrawBox((int)position_.x, (int)position_.y, 100, 100, 0.0f, WHITE, kFillModeSolid);
+	Novice::DrawBox((int)position_.x, (int)position_.y, 50, 50, 0.0f, WHITE, kFillModeSolid);
 }
 
 void Player::MoveRight() {
@@ -17,4 +17,12 @@ void Player::MoveRight() {
 
 void Player::MoveLeft() {
 	this->position_.x -= speed_;
+}
+
+void Player::MoveUp() {
+	position_.y -= speed_;
+}
+
+void Player::MoveDown() {
+	position_.y += speed_;
 }

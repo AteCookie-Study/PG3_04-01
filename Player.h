@@ -28,4 +28,10 @@ public:
 
 	/// 左移動
 	void MoveLeft();
+
+	/// 上移動
+	void MoveUp();
+
+	/// 下移動
+	void MoveDown();
 };
