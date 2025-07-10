@@ -1,5 +1,5 @@
 #include <Novice.h>
-#include "Scene.h"
+#include "GameManager.h"
 
 const char kWindowTitle[] = "GC2C_03_キョク_キンウ";
 const int kWindowWidth = 1280; // 画面の横幅
@@ -12,27 +12,21 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Novice::Initialize(kWindowTitle, 1280, 720);
 
 	/// 初期処理
-	Scene* scene = new Scene();
-	scene->Initialize();
+	GameManager* gameManager = new GameManager();
+	
 
-	// キー入力結果を受け取る箱
-	char keys[256] = { 0 };
-	char preKeys[256] = { 0 };
+	
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
-		// フレームの開始
-		Novice::BeginFrame();
-
-		// キー入力を受け取る
-		memcpy(preKeys, keys, 256);
-		Novice::GetHitKeyStateAll(keys);
-
+		
+		
+		
 		///
 		/// ↓更新処理ここから
 		///
-
-		scene->Update();
+		gameManager->Run();
+		
 
 		///
 		/// ↑更新処理ここまで
@@ -44,21 +38,15 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		/// ↓描画処理ここから
 		///
 		
-		scene->Draw();
+		
 
 		///
 		/// ↑描画処理ここまで
 		///
-
-		// フレームの終了
-		Novice::EndFrame();
-
-		// ESCキーが押されたらループを抜ける
-		if (preKeys[DIK_ESCAPE] == 0 && keys[DIK_ESCAPE] != 0) {
-			break;
-		}
+	
+	
 	}
-
+	delete gameManager;
 	// ライブラリの終了
 	Novice::Finalize();
 	return 0;

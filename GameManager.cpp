@@ -35,6 +35,7 @@ int GameManager::Run() {
 		// 前のシーンに現在のシーンを代入
 		prevSceneNo_ = currentSceneNo_;
 
+
 		// 現在のシーンの番号を受け取る
 		currentSceneNo_ = sceneArr_[currentSceneNo_]->GetSceneNo();
 
@@ -47,6 +48,7 @@ int GameManager::Run() {
 
 		// 現在シーンの描画
 		sceneArr_[currentSceneNo_]->Draw();
+		
 
 		// フレームの終了
 		Novice::EndFrame();

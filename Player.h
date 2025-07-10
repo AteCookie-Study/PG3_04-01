@@ -34,4 +34,6 @@ public:
 
 	/// 下移動
 	void MoveDown();
+
+	const Vector2& GetPosition();
 };

@@ -26,3 +26,7 @@ void Player::MoveUp() {
 void Player::MoveDown() {
 	position_.y += speed_;
 }
+
+const Vector2& Player::GetPosition() {
+	return position_;
+}
